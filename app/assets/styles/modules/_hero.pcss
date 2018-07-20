@@ -1,0 +1,219 @@
+.field-item {
+	.section--hero {
+		padding: 0;
+		.hero {
+			.hero-item-container {
+				z-index: 1;
+				position: relative;
+				overflow: hidden;
+
+				.hero-image {
+					background-color: #000;
+					position: absolute;
+					z-index: -1;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+
+					* {
+						width: 100%;
+						height: 100%;
+					}
+
+					.item-bg { 
+						background-image: url('//assetlibs.kaplaninternational.com/_assets/career-ebook/images/career-guide-hero-xs.jpg');
+						background-position: left top;
+						@mixin sm-min {
+							background-position: center top;
+							background-image: url('//assetlibs.kaplaninternational.com/_assets/career-ebook/images/career-guide-hero-sm.jpg');
+						}
+						@mixin md-min {
+							background-image: url('//assetlibs.kaplaninternational.com/_assets/career-ebook/images/career-guide-hero-md.jpg');
+						}
+						@mixin lg-min {
+							background-image: url('//assetlibs.kaplaninternational.com/_assets/career-ebook/images/career-guide-hero-lg.jpg');
+						}
+						@mixin all-Retina {
+							background-image: url('//assetlibs.kaplaninternational.com/_assets/career-ebook/images/career-guide-hero@2x.jpg');
+						}
+					}
+				}
+
+				.hero-text {
+					background-size: 100% 100%;
+					@mixin xs-max {
+						text-align: center;
+						padding: 38% 0 8% 0;
+						background: rgba(0,0,0,0.2);
+					}
+					@mixin sm-min {
+						text-align: left;
+						padding: 6% 0;
+					}
+					@mixin md-min {
+						padding: 5% 0;
+					}
+					@mixin lg-min {
+						padding: 4% 0;
+					}
+
+					.hero-inner {
+						position: relative;
+						width: 100%;
+						@mixin sm-min {
+							float: right;
+							width: 50%;
+						}
+
+						h1.campaign-title {
+							color: $color-white;
+							margin-bottom: 0;
+							margin-left: -0.05em;
+							padding-bottom: 0.1em;
+							text-transform: uppercase;
+							font-weight: 900;
+							line-height: 1;
+
+							@mixin xs-max {
+								font-size: 12vw;
+								letter-spacing: -0.01em;
+							}
+							@mixin sm-min {
+								font-size: 58px;
+								letter-spacing: -0.01em;
+							}
+							@mixin md-min {
+								font-size: 68px;
+								letter-spacing: -0.02em;
+							}
+							@mixin lg-min {
+								font-size: 84px;
+								letter-spacing: -0.02em;
+							}
+
+							&.big {
+								@mixin sm-min {
+									font-size: 68px;
+								}
+								@mixin md-min {
+									font-size: 86px;
+								}
+								@mixin lg-min {
+									font-size: 108px;
+								}
+							}
+						}
+						h3.strapline {
+							color: $color-white;
+							padding: 0;
+							font-size: 16px;
+							font-weight: 900;
+							line-height: $line-height-narrow;
+							@mixin sm-min {
+								font-size: 18px;
+							}
+							@mixin md-min {
+								font-size: 24px;
+							}
+							@mixin lg-min {
+								font-size: 30px;
+							}
+						}
+
+						.hero-cta {
+							.btn {
+								&.hero-btn {
+									position: relative;
+									z-index: 1;
+									font-size: 13px !important;
+									color: $color-white;
+									text-transform: uppercase;
+									font-weight: $font-weight-bold;
+									line-height: 1.1;
+									padding: 1.25em 2.5em;
+									margin: 1em 0;
+									max-width: 280px;
+									overflow: hidden;
+									align-items: center;
+									border: 1px solid $color-white;
+									&.main-cta-ani {
+										background: linear-gradient(270deg, transparent, transparent, #240F6E, transparent, transparent);
+										background-size: 1000% 1000%;
+										-webkit-animation: Gradation-Ani 6s ease infinite;
+										-moz-animation: Gradation-Ani 6s ease infinite;
+										animation: Gradation-Ani 6s ease infinite;
+									}
+									&:before {
+										content: '';
+										position: absolute;
+										z-index: -1;
+										top: 0;
+										left: 0;
+										width: 0;
+										height: 100%;
+										background-color: $color-primary;
+										transition: width .3s;
+									}
+									&:hover {
+										border-color: $color-primary;
+										&:before {
+											width: 100%;
+										}
+									}
+									span {
+										flex: 0 0 100%;
+										max-width: 100%;
+									}
+									@mixin md-min {
+										font-size: 16px !important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+body.language-dir-rtl {
+	.field-item {
+		.section--hero {
+			.hero {
+				.hero-item-container {
+					.hero-image {
+						.item-bg { 
+							background-position: right top;
+							@mixin sm-min {
+								background-position: center top;
+							}
+						}
+					}
+					.hero-text {
+						.hero-inner {
+							@mixin sm-min {
+								float: left;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Gradient Animation */
+@-webkit-keyframes Gradation-Ani {
+	0% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+@-moz-keyframes Gradation-Ani {
+	0% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+@keyframes Gradation-Ani { 
+	0% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}

@@ -1,2 +1,2 @@
-# kiedru_kaplan-career-guide
-Kaplan Career Guide
+# kiedru_career-guide
+Kaplan Career Guide (Career Ebook Download)

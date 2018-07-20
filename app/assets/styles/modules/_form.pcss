@@ -1,0 +1,721 @@
+#wrapper {
+	section {
+		&.block-webform {
+			padding: 30px 0;
+			background: rgb(36,15,110);
+			background: -moz-linear-gradient(-45deg,  rgba(36,15,110,1) 0%, rgba(124,111,168,1) 100%);
+			background: -webkit-linear-gradient(-45deg,  rgba(36,15,110,1) 0%,rgba(124,111,168,1) 100%);
+			background: linear-gradient(135deg,  rgba(36,15,110,1) 0%,rgba(124,111,168,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#240f6e', endColorstr='#7c6fa8',GradientType=1 );
+
+			@mixin sm-min {
+				padding: 4% 0;
+			}
+
+			label {
+				input[type="radio"],
+				input[type="checkbox"] {
+					left: 0;
+					margin-left: 0;
+
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+			
+/* 
+			input[type="radio"]:empty,
+			input[type="checkbox"]:empty {
+				display : none;
+			}
+			input[type="radio"]:empty ~ label,
+			input[type="checkbox"]:empty ~ label {
+				display : block;
+				position : relative;
+				cursor : pointer;
+				-webkit-user-select : none;
+				-moz-user-select : none;
+				-ms-user-select : none;
+				user-select : none;
+			}
+			input[type="radio"]:empty ~ label:before,
+			input[type="checkbox"]:empty ~ label:before {
+				content : '';
+				position : absolute;
+				display : block;
+				top: 1px;
+				left: 0;
+				width : 18px;
+				height : 18px;
+				border: 1px solid rgba(0,0,0,.5);
+				background: rgba(255,255,255,0.5);
+				border-radius: 3px;
+			}
+
+			@mixin md-min {
+				input[type="radio"]:empty:hover ~ label:before,
+				input[type="checkbox"]:empty:hover ~ label:before {
+					transform: scale(1.2);
+					transition: all 0.1s ease-out;
+					box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.4);
+				}
+				input[type="radio"]:empty:hover ~ label:after,
+				input[type="checkbox"]:empty:hover ~ label:after {
+					transform: scale(1.2) rotate(45deg);
+					transition: all 0.1s ease-out;
+				}
+			}
+			
+			input[type="radio"]:empty ~ label:before {
+				border-radius : 50%;
+			}
+			input[type="radio"]:checked ~ label:before {
+				content : '';
+				width : 18px;
+				height : 18px;
+				text-align : center;
+				color : #FFFFFF;
+				border-color: transparent;
+				background-color : #00A4D9;
+			}
+			input[type="checkbox"]:empty ~ label:after {
+				display: inline-block;
+				position: absolute;
+				border-right: 2px solid rgba(255,255,255,0);
+				border-bottom: 2px solid rgba(255,255,255,0);
+				top: 2px;
+				left: 6px;
+				width: 6px;
+				height: 12px;
+				content: '';
+				transform: rotate(45deg);
+			}
+			input[type="checkbox"]:checked ~ label:before {
+				color : #FFFFFF;
+				border-color: transparent;
+				background-color : #00A4D9;
+			}
+			input[type="checkbox"]:checked ~ label:after {
+				border-right: 2px solid #FFFFFF;
+				border-bottom: 2px solid #FFFFFF;
+			}
+			input[type="radio"]:focus ~ label:before,
+			input[type="checkbox"]:focus ~ label:before {
+				box-shadow : 0 0 0 3px #999999;
+			}
+ */
+			.block-title,
+			.block-content {
+				color: $color-white;
+				margin-left: 20px;
+				margin-right: 20px;
+				@mixin sm-min {
+					max-width: 640px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				@mixin md-min {
+					max-width: 720px;
+				}
+				@mixin lg-min {
+					max-width: 800px;
+				}
+			}
+
+			.block-title {
+				color: $color-white;
+				text-transform: uppercase;
+				text-align: center;
+				font-size: 24px;
+				line-height: 1.1;
+				margin-bottom: 0;
+
+				@mixin sm-min {
+					font-size: 26px;
+				}
+				@mixin md-min {
+					font-size: 28px;
+				}
+				@mixin lg-min {
+					font-size: 32px;
+				}
+			}
+
+			.webform-client-form {
+				> div {
+					> .webform-component-checkboxes {
+						width: 100%;
+						margin-bottom: 0;
+						color: #404040;
+						input[type="checkbox"] {
+							width: 17px;
+							height: 17px;
+							top: -2px;
+						}
+					}
+				}
+
+				> div:before,
+				> div:after {
+					content: " ";
+					display: table
+				}
+				> div:after {
+					clear: both
+				}
+
+				.form-item {
+					&.webform-component-markup {
+						h5.strapline {
+							font-size: 18px;
+							text-align: center;
+						}
+					}
+					&.webform-component-checkboxes {
+						margin-bottom: 1em;
+						label,
+						label.option {
+							color: $color-white;
+
+							@mixin md-min {
+								&:hover {
+									color: $color-accent-yellow;
+								}
+							}
+						}
+					}
+				}
+
+				fieldset {
+					&.panel-default {
+						> .panel-body {
+							padding: 30px 0;
+							border-top: 1px solid rgba(255,255,255,0.2);
+							border-bottom: 1px solid rgba(255,255,255,0.2);
+							@mixin sm-min {
+								margin-top: 4%;
+								padding: 4% 0;
+							}
+						}
+						> .panel-heading {
+							background: #232977;
+							font-weight: 700;
+							font-size: 16px;
+							letter-spacing: .01em;
+							color: #FFFFFF;
+							
+							.panel-title {
+								font-size: 15px;
+								@mixin sm-min {
+									font-size: 16px;
+								}
+							}
+						}
+					}
+					&.panel {
+						border: none;
+						background-color: transparent;
+						box-shadow: none;
+
+						.webform-component {
+							margin-bottom: 2em;
+
+							&.webform-component-optionsmarkup {
+								label {
+									color: $color-white;
+									font-size: 16px;
+									margin-bottom: 0;
+								}
+							}
+
+							label {
+								font-weight: $font-weight;
+								color: $color-white;
+							}
+							input, button, select, textarea {
+								color: $color-grey-l;
+								font-size: $font-size-md;
+								height: auto;
+								min-height: 38px;
+								line-height: normal;
+								background-color: rgba(255,255,255,0.5);
+								border: 1px solid rgba(255,255,255,0);
+								&:focus {
+									box-shadow: none;
+									background-color: rgba(255,255,255,1);
+									transition: background-color .5s linear;
+								}
+							}
+							input, textarea {
+								&:focus {
+									
+								}
+							}
+							textarea.form-control {
+								line-height: 1.5;
+							}
+							&.webform-component-select {
+								&:before {
+									display: block;
+									content: "▼";
+									color: #240F6E;
+									position: absolute;
+									font-size: 10px;
+									bottom: 12px;
+									right: 12px;
+									width: 10px;
+									height: 10px;
+									text-align: center;
+									line-height: 10px;
+									background-color: transparent;
+								}
+								&:after {
+									
+								}
+								select.form-select {
+									background-image: none;
+								}
+							}
+						}
+					}
+
+					label {
+						display: block;
+						float: none;
+						width: 100%;
+						font-weight: 700;
+						min-height: 0;
+					}
+					.webform-component {
+						display: block;
+						float: left;
+						width: 100%;
+						margin-bottom: 33px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+
+						.description {
+							width: 100%;
+							float: none;
+							font-size: 12px;
+						}
+					}
+					.webform-component>.webform-datepicker,
+					.webform-component>select,
+					.webform-component>.form-textarea-wrapper,
+					.webform-component>input {
+						width: 100%;
+						float: none;
+						clear: both;
+					}
+					.webform-datepicker:before,
+					.webform-datepicker:after {
+						content: " ";
+						display: table;
+					}
+					.webform-datepicker:after {
+						clear: both;
+					}
+					.webform-datepicker:before,
+					.webform-datepicker:after {
+						content: " ";
+						display: table;
+					}
+					.webform-datepicker:after {
+						clear: both;
+					}
+					.webform-datepicker .form-type-select,
+					.webform-component {
+						position: relative;
+						display: inline-block;
+					}
+					.webform-datepicker .form-type-select select,
+					.webform-component select {
+						padding-right: 33px;
+						background: #fff url('//cdn.kaplaninternational.com/profiles/base_drupal_build/themes/kis_theme/images/select-arrow.png') right 6px center no-repeat;
+					}
+					.webform-component-date .form-group {
+						margin-bottom: 0;
+					}
+					.webform-datepicker .form-type-select::before,
+					.webform-component-select::before {
+						display: none;
+						position: absolute;
+						bottom: 7px;
+						height: 20px;
+						right: 29px;
+						width: 1px;
+						content: " ";
+						background: #ddd;
+					}
+					.webform-datepicker .form-type-select {
+						float: left;
+					}
+					.webform-datepicker .form-type-select::before {
+						right: 31px;
+					}
+					.webform-datepicker .webform-calendar-icon {
+						vertical-align: top;
+						float: left;
+					}
+					.webform-component--step-1--Questions-and-Comments--c-sfd-1454655804 .radio {
+						display: inline-block
+					}
+					.webform-component--step-2--Date-of-Birth--c-sfd-1463042328 .webform-container-inline {
+						width: 100%
+					}
+					div[class*='webform-component--step-1--Questions-and-Comments'] {
+						width: 100%
+					}
+					&.webform-component-fieldset {
+
+						.webform-component-optionsmarkup {
+							&[class*="webform-component--fieldset--Brochure-Downloaded"] {
+								width: 100%;
+
+								.form-checkboxes {
+									width: 100%;
+
+									display: -webkit-box;
+									display: -moz-box;
+									display: -ms-flexbox;
+									display: -webkit-flex;
+									display: flex;
+
+									-webkit-box-orient: horizontal;
+									-webkit-box-direction: normal;
+									-webkit-flex-flow: row wrap;
+									-ms-flex-flow: row wrap;
+									flex-flow: row wrap;
+
+									-webkit-flex-direction: row;
+									-ms-flex-direction: row;
+									flex-direction: row;
+
+									-webkit-flex-wrap: wrap;
+									-ms-flex-wrap: wrap;
+									flex-wrap: wrap;
+
+									-ms-flex-pack: start;
+									-webkit-box-pack: start;
+									justify-content: flex-start;
+
+
+									div[class*='webform-component--fieldset--Brochure-Downloaded'] {
+										display: block;
+										width: auto;
+										min-height: 1px;
+										float: none;
+
+										-ms-flex-preferred-size: 0;
+										flex-basis: 0;
+										-ms-flex-positive: 1;
+										flex-grow: 1;
+										-ms-flex: 0 0 32.33333333%;
+										flex: 0 0 32.33333333%;
+										max-width: 32.33333333%;
+										margin: 0 1% 0 0;
+										padding: 0;
+										cursor: pointer;
+
+										input[type="checkbox"] {
+											bottom: 8px;
+											top: auto;
+											left: calc(50% - 8px);
+											width: auto;
+											min-height: auto;
+
+											@mixin sm-min {
+												bottom: 18px;
+											}
+										}
+										/* input[type="checkbox"]:empty ~ label {
+											background: rgba(255, 255, 255, 0.2);
+										}
+										input[type="checkbox"]:hover ~ label {
+											background: rgba(255, 255, 255, 0.4);
+										}
+										input[type="checkbox"]:checked ~ label {
+											background: rgba(255,255,255,.8);
+											> .bd-desc {
+												color: #404040;
+											}
+										}
+										input[type="radio"]:empty ~ label,
+										input[type="checkbox"]:empty ~ label {
+											display : block;
+											position : relative;
+											cursor : pointer;
+											-webkit-user-select : none;
+											-moz-user-select : none;
+											-ms-user-select : none;
+											user-select : none;
+										} */
+
+										input[type="radio"]:empty ~ label:before,
+										input[type="checkbox"]:empty ~ label:before {
+											top: auto;
+											right: auto;
+											bottom : 10px; /* <- - - CUSTOM */
+											left : calc(50% - 9px); /* <- - - CUSTOM */
+										}
+										input[type="checkbox"]:empty ~ label:after {
+											top: auto; /* <- - - CUSTOM */
+											right: auto; /* <- - - CUSTOM */
+											left: calc(50% - 3px); /* <- - - CUSTOM */
+											bottom: 15px; /* <- - - CUSTOM */
+										}
+
+										label {
+											margin: 0;
+											padding: 1px 1px 10px 1px;
+											background: rgba(255,255,255,0.2);
+											
+											&:hover {
+												background: rgba(255,255,255,0.4);
+											}
+
+											@mixin sm-min {
+												padding: 10px;
+											}
+											@mixin md-min {
+												padding: 20px 10px;
+											}
+											height: 100%;
+											cursor: pointer;
+											@mixin md-min {
+												transition: all .1s ease-in-out;
+												&:hover {
+													transform: scale(1.05);
+												}
+											}
+											.bd-head {
+												display: none;
+											}
+											img {
+												margin: 0 auto;
+												max-width: 128px;
+												width: 100%;
+											}
+											.bd-desc {
+												font-size: $font-size-xxs;
+												@mixin sm-min {
+													font-size: $font-size-xs;
+												}
+												@mixin md-min {
+													font-size: $font-size-sm;
+												}
+												@mixin lg-min {
+													font-size: $font-size-md;
+												}
+												padding: 10px 0 20px 0;
+												text-align: center;
+												font-weight: 700;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+
+					@mixin md-max {
+						fieldset div[class*='webform-component--step-1--Preferred-Start-Date'],
+						fieldset div[class*='webform-component--step-1--Preferred-Contact-Date'] {
+							width: 100%;
+						}
+					}
+					@mixin xs-max {
+						margin-top: 20px;
+						.webform-datepicker .form-type-select .form-select {
+							padding-right: 16px;
+							padding-left: 7px;
+							background-position: right 1px center;
+						}
+					}
+					@mixin sm-min {
+						.webform-datepicker .form-type-select::before,
+						.webform-component-select::before {
+							display: block;
+						}
+					}
+					@mixin md-only {
+						.left-component {
+							margin-right: 2%
+						}
+					}
+					@mixin lg-min {
+						.webform-component {
+							width: 47%;
+						}
+						.webform-datepicker .form-type-select .form-select {
+							padding-right: 30px;
+							padding-left: 8px;
+						}
+						.left-component {
+							margin-right: 6%;
+						}
+					}
+				}
+				.icon-ki-calendar:before {
+					content: " ";
+					left: 0;
+					top: 2px;
+					width: 30px;
+					height: 30px;
+					background: url('//cdn.kaplaninternational.com/profiles/base_drupal_build/themes/kis_theme/images/ico-calendar.png');
+					position: relative;
+					display: inline-block;
+				}
+				.webform-submit {
+					width: 100%;
+					float: right;
+					font-size: 14px;
+					font-weight: 800;
+					background-color: $color-accent-yellow;
+					color: $color-primary;
+					border: none;
+					margin: 1em 0;
+					&:hover {
+						border: none;
+						background-color: $color-primary;
+						color: $color-accent-yellow;
+					}
+				}
+				@mixin sm-max {
+					fieldset {
+						margin-bottom: 25px;
+					}
+				}
+				@mixin xs-max {
+					margin: 0 0 20px 0;
+				}
+				@mixin sm-min {
+
+				}
+				@mixin md-min {
+					> div {
+					 	> .webform-component-checkboxes {
+							label.option {
+								padding: 0 26px;
+							}
+							input[type="checkbox"] {
+								right: auto;
+								left: 0;
+							}
+						}
+					}
+					.webform-submit {
+						font-size: 16px;
+						max-width: 380px;
+					}
+				}
+				@mixin lg-min {
+					
+				}
+			}
+		}
+	}
+
+
+
+
+	/* - - - - - - - - - - - - - - - - -
+	 - - - - - - - - - - - - - - - - -
+	  - - - - - - - - - - - - - - - - -
+	   - - - - - - - - - - - - - - - - -
+		- - - - - - - - - - - - - - - - -
+		 - - - - - - - - - - - - - - - - -
+		  - - - - - - - - - - - - - - - - -
+		   - - - - - - - - - - - - - - - - -
+			- - - - - - - - - - - - - - - - - */
+
+
+
+
+	.language-dir-rtl {
+		section {
+
+			label {
+				input[type="radio"],
+				input[type="checkbox"] {
+					left: auto;
+					margin-left: auto;
+					right: 0;
+					margin-right: 0;
+				}
+			}
+
+			&.block-webform {
+				.webform-client-form {
+					fieldset {
+						.webform-datepicker .form-type-select select,
+						.webform-component select {
+							background-position: 9px center;
+							padding-right: 12px;
+							padding-left: 33px
+						}
+						.webform-datepicker .form-type-select::before,
+						.webform-component-select::before {
+							right: auto;
+							left: 29px
+						}
+						.webform-datepicker .form-type-select {
+							float: right
+						}
+						.webform-datepicker .form-type-select::before {
+							right: auto;
+							left: 31px
+						}
+						.webform-datepicker .webform-calendar-icon {
+							float: right
+						}
+						.webform-component {
+							float: right
+						}
+
+						@mixin xs-max {
+							.webform-datepicker .form-type-select .form-select {
+								padding-right: 7px;
+								padding-left: 16px;
+								background-position: 4px center
+							}
+						}
+						@mixin lg-min {
+							.webform-datepicker .form-type-select .form-select {
+								padding-left: 30px;
+								padding-right: 8px
+							}
+							.left-component {
+								margin-right: 0;
+								margin-left: 6%
+							}
+						}
+						@mixin md-only {
+							.left-component {
+								margin-right: 0;
+								margin-left: 2%
+							}
+						}
+
+						@mixin md-min {
+							.webform-client-form > div >.webform-component-checkboxes {
+								text-align: left
+							}
+							.webform-client-form > div >.webform-component-checkboxes label.option {
+								padding-right: 0;
+								padding-left: 30px
+							}
+						}
+					}
+
+					.webform-submit {
+						float: left
+					}
+				}
+			}
+		}
+	}
+}

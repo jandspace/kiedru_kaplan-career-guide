@@ -1,0 +1,194 @@
+.field-item {
+	.section--career-ebooks {
+		background-color: #EEEEEE;
+		.career-ebooks {
+			.section-head {
+			}
+			.section-body {
+				.flex-container {
+					.flex-item {
+						-ms-flex: 0 0 100%;
+						flex: 0 0 100%;
+						max-width: 100%;
+						&:hover {
+							z-index: 9;
+						}
+						@mixin xs-max {
+							padding-bottom: 0;
+						}
+						@mixin sm-min {
+							-ms-flex-preferred-size: 0;
+							flex-basis: 0;
+							-ms-flex-positive: 1;
+							flex-grow: 1;
+							-ms-flex: 0 0 33.33333333%;
+							flex: 0 0 33.33333333%;
+							max-width: 33.33333333%;
+							padding: 10px;
+						}
+						@mixin md-min {
+							padding: 15px;
+						}
+
+						.item-box {
+							background-color: #606060;
+							position: relative;
+							width: 100%;
+							min-height: 1px;
+							height: 0;
+							padding-top: 146%;
+
+							@mixin sm-only {
+								padding-top: 200%;
+							}
+
+							a.ebook-thumb {
+								display: block;
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 100%;
+								transition: all 0.2s ease;
+							}
+							a.front {
+								display: block;
+								position: absolute;
+								bottom: 0;
+								left: 0;
+								width: 100%;
+								min-height: 50%;
+								background-color: #FFFFFF;
+								z-index: 1;
+								&:before {
+									content: "";
+									display: block;
+									position: absolute;
+									left: -1px;
+									top: -30px;
+									width: calc(100% + 2px);
+									height: 100%;
+									background-color: #FFFFFF;
+									transform: skew(0deg, 7.5deg);
+									z-index: -1;
+								}
+								span {
+									display: block;
+									text-align: left;
+									color: #404040;
+									&.desc-container {
+										width: 100%;
+										height: 100%;
+										padding: 0 15px 15px 15px;
+										.vol {
+											font-size: 11px;
+											font-weight: 900;
+											color: #00A4D9;
+											text-transform: uppercase;
+											margin-top: -1em;
+											margin-bottom: 0.5em;
+										}
+										.title {
+											font-size: 16px;
+											font-weight: 900;
+											color: #404040;
+											line-height: 1.1;
+											margin-bottom: 0.5em;
+											text-transform: uppercase;
+										}
+										.desc {
+											font-size: 14px;
+										}
+
+										@mixin sm-min {
+											padding: 0 10px 10px 10px;
+											.vol {
+												font-size: 12px;
+											}
+											.title {
+												font-size: 18px;
+												margin-bottom: 0.5em;
+											}
+											.desc {
+												font-size: 13px;
+											}
+										}
+										@mixin md-min {
+											padding: 0 20px 20px 20px;
+											.title {
+												margin-bottom: 0.5em;
+											}
+											.desc {
+												font-size: 14px;
+											}
+										}
+										@mixin lg-min {
+											.title {
+												margin-bottom: 0.75em;
+											}
+										}
+									}
+								}
+							}
+							&:hover {
+								z-index: 1;
+								* {
+									text-decoration: none;
+								}
+								a.ebook-thumb {
+									top: -6%;
+									left: 6%;
+									transform: rotate(2.5deg);
+									box-shadow: 5px 5px 24px rgba(0,0,0,0.6);
+								}
+							}
+							&.disable {
+								transition: all 0.5s ease;
+
+								a.ebook-thumb:after {
+									display: -webkit-box;
+									display: -ms-flexbox;
+									display: flex;
+									-webkit-box-pack: center;
+									-ms-flex-pack: center;
+									justify-content: center;
+									-webkit-box-align: center;
+									-ms-flex-align: center;
+									align-items: center;
+
+									content: attr(data-title);
+									position: absolute;
+									top: 0;
+									left: 0;
+									width: 100%;
+									height: 50%;
+									text-align: center;
+									color: #FFFFFF;
+									font-size: 18px;
+									font-weight: 700;
+
+									transition: all 0.2s ease;
+								}
+								a.front {
+									span {
+										opacity: 0.75;
+									}
+								}
+
+								&:hover {
+									-webkit-filter: grayscale(100%);
+									filter: grayscale(100%);
+									a.ebook-thumb {
+										top: 0;
+										left: 0;
+										transform: none;
+										box-shadow: none;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
